@@ -1,0 +1,74 @@
+apollo:
+  meta: http://localhost:8080
+app:
+  id: cre
+server:
+  port: 14001
+  servlet:
+    context-path: /cre
+
+spring:
+  application:
+    name: cre
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.200.143.207:3306/cre?characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&allowPublicKeyRetrieval=true
+    username:
+    password:
+    initial-size: 30
+    max-active: 100
+    min-idle: 10
+    max-wait: 300
+  redis:
+    host: localhost
+    password:
+    port: 6379
+    max-wait: 30000
+    max-active: 100
+    max-idle: 20
+    min-idle: 0
+    timeout: 5000
+  security:
+    eureka-sport:
+    user:
+      name:
+      password:
+
+
+ftp:
+  address:
+  server: localhost
+  username:
+  password:
+
+
+sms:
+  url: http://106.ihuyi.cn/webservice/sms.php?method=Submit
+  account:
+  apikey:
+
+wx:
+  appId: wxceab92b2f5ad5fc8
+  secret:
+  cert:
+  notifyUrl: http://app-api.changsh.net/cre/app/payment/callBack
+  mchId: 1593862391
+  mchKey:
+
+gateway:
+  address:
+
+swagger:
+  enable:
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${spring.security.eureka-sport}/eureka
+
+
+mybatis-plus:
+  global-config:
+    banner: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
